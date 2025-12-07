@@ -174,13 +174,14 @@ If adopted professionally:
 - Smooth error boundaries
 - Client components only where necessary (AI Insights, so that rest of page may server-load while waiting)
 - Purposeful avoidance of global client state (local state per-component)
-- Prisma schema normalized & validated
+- Prisma schema normalized and validated
 
 ## 9. Future Enhancements
 ### 9.1 Short-Term
 - User authentication with middleware
 - Migration to Postgres encrypted-at-rest instance
 - Statistical forecasting
+- Debt payoff strategization for loans and revolving account balances
 - Category auto-classification model
 - Multi-currency support
 - Adding colorblind mode, other accessibility settings(WCAG, Aria/Screenreader compatibility) for better incusive UI design
@@ -189,7 +190,7 @@ If adopted professionally:
 - Plaid Integration for real transaction data
 - End-to-end encryption for all network traffic between APIs and UI
 - Mobile app for frictionless access
-- On-device model finetuning
+- On-device model fine-tuning
 
 ## 10. Conclusion
 FinGuardian demonstrates how a modern AI-powered finance app can:
