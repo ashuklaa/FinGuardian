@@ -7,8 +7,11 @@ This project was developed as part of a 48-hour prototype challenge and demonstr
 - High-quality engineering practices  
 - Secure architecture  
 - ML-backed financial reasoning  
-- UX tailored toward financial  clarity and encouraging positive behavior change  
+- UX tailored toward financial  clarity and encouraging positive behavior change
 
+## Demo Video
+[![FinGuardian Demo](https://img.youtube.com/vi/EY6e8Rf-n_s/0.jpg)](https://www.youtube.com/watch?v=EY6e8Rf-n_s)
+### [Watch the demo on YouTube](https://https://www.youtube.com/watch?v=EY6e8Rf-n_s)
 ---
 
 ## Features
