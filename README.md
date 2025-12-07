@@ -7,11 +7,11 @@ This project was developed as part of a 48-hour prototype challenge and demonstr
 - High-quality engineering practices  
 - Secure architecture  
 - ML-backed financial reasoning  
-- UX tailored toward clarity and behavior change  
+- UX tailored toward financial  clarity and encouraging positive behavior change  
 
 ---
 
-## ✨ Features
+## Features
 
 ### **Financial Dashboard**
 - Month-by-month spending visualization  
@@ -21,9 +21,9 @@ This project was developed as part of a 48-hour prototype challenge and demonstr
 - Three-month trend extraction
 
 ### **AI Financial Coach**
-Powered locally using **Gemma2:9b** or **Qwen 32B** via Ollama:
+Powered locally using **Gemma2:9b** via Ollama:
 
-- Generates human-quality financial insights  
+- Generates high quality financial insights  
 - Avoids hallucination via numeric grounding  
 - Detects anomalies like:
   - spending spikes  
@@ -37,14 +37,14 @@ Powered locally using **Gemma2:9b** or **Qwen 32B** via Ollama:
 ### **Budget Sentry**
 - Configurable category budgets  
 - Near-limit and over-limit detection  
-- Color-coded UX and progress bars  
-- Designed for quick scan behavior
+- Progress bars and color-coded UI for urgency signaling
+- Designed for quickly scanning, rather than taking a deep dive.
 
 ### **Security-first Architecture**
-- No external APIs required for prototype  
-- All inference runs on-device  
+- No unsecure external APIs required
+- All inference runs on-device
 - No financial data leaves your machine  
-- Clear path defined for production hardening (Plaid + encrypted DB)
+- Clear path defined for production hardening (Plaid + DB encryption)
 
 ---
 
@@ -57,7 +57,7 @@ Powered locally using **Gemma2:9b** or **Qwen 32B** via Ollama:
 - **Tailwind v4 + shadcn/ui**
 - **Ollama (running Gemma2:9b)**
 - **React Server Components**
-- **asynchronous LLM UI**
+- **Asynchronous LLM UI**
 
 ---
 

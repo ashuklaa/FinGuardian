@@ -2,7 +2,7 @@
 
 ## 1. Overview
 
-FinGuardian is a 48-hour prototype to showcase AI being applied in a fiduciary use case, utilizing raw financial transaction data into personalized, trustworthy insights.  
+FinGuardian is a 48-hour prototype to showcase AI being applied in a fiduciary use case, utilizing raw financial transaction data to provide personalized, trustworthy insights.  
 
 The success metrics used to evaluate completeness of this MVP:
 
@@ -182,6 +182,7 @@ Model deployment:
 - Statistical forecasting
 - Category auto-classification model
 - Multi-currency support
+- Adding colorblind-mode, other accessibility settings(WCAG, Aria/Screenreader compatibility) for better UI design
 
 ## Long-Term
 - Plaid Integration for real transaction data
