@@ -80,7 +80,7 @@ Each category budget contains:
 - Automatic status classification: `ok`, `near`, `over`
 
 Twelve months of realistic synthetic data include:
--Income
+- Income
 - Rent  
 - Utilities  
 - Travel anomalies  
