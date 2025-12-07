@@ -143,7 +143,7 @@ The client UI uses:
 
 ### 6.2 Production Security Plan
 If adopted professionally:
-- JWT for all api conversions of server-side domain functions
+- JWT for all API conversions of server-side domain functions
 - Replace SQLite with Postgres encrypted-at-rest
 - Use Plaid for real transaction ingestion
 - Apply robust input sanitization and train model to favor system prompt over user section for prompt injection prevention 
@@ -164,6 +164,7 @@ If adopted professionally:
 - shadcn/ui
 - Cyber-orange color palette/corporate branding
 - Chat interface with DM-style chat bubbles
+**Production Plans:** style-match with host or parent app/website for consistent theming
 
 ## 8. Engineering Quality Practices
 - Modular directory structure
