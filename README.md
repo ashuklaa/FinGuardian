@@ -54,10 +54,10 @@ Powered locally using **Gemma2:9b** or **Qwen 32B** via Ollama:
 - **TypeScript**
 - **Prisma ORM**
 - **SQLite (local dev)**
-- **Tailwind + shadcn/ui**
+- **Tailwind v4 + shadcn/ui**
 - **Ollama (running Gemma2:9b)**
 - **React Server Components**
-- **Suspense-based asynchronous LLM UI**
+- **asynchronous LLM UI**
 
 ---
 
