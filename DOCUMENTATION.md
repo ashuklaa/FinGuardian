@@ -37,7 +37,7 @@ In addition to the capabilities of the AI Coach, data visualization is also an i
 When handling financial data, it must be stored according to regulations and should convey a strong trust sentiment to end users. This MVP version exemplifies this ideology by implementing the following:
 - Local, on-device LLM inference
 - Prisma layer for DB integrity  
-- Server-isolated data access (Client components cannot call data access api's or Prisma schemas directly)
+- Server-isolated data access (Client components cannot call data access APIs or Prisma schemas directly)
 - Production migration plan: 
   - Implement OAUTH/SSO
   - Gate API with JWT
