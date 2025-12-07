@@ -19,6 +19,9 @@ This project was developed as part of a 48-hour prototype challenge and demonstr
 - Category-level spending  
 - 12 months of synthetic realistic financial data  
 - Three-month trend extraction
+<img width="1920" height="1974" alt="image" src="https://github.com/user-attachments/assets/145b783d-9664-453b-bbc3-f3fc6bc9172d" />
+
+
 
 ### **AI Financial Coach**
 Powered locally using **Gemma2:9b** via Ollama:
@@ -33,12 +36,18 @@ Powered locally using **Gemma2:9b** via Ollama:
   - forgotten trials  
 - Provides 11th-grade reading-level suggestions  
 - Allows **two-way chat** with stateful memory
+<img width="1872" height="983" alt="image" src="https://github.com/user-attachments/assets/0d78752d-c9ef-44b0-bb5f-f23ef5dad668" />
+
+
+
 
 ### **Budget Sentry**
 - Configurable category budgets  
 - Near-limit and over-limit detection  
 - Progress bars and color-coded UI for urgency signaling
 - Designed for quickly scanning, rather than taking a deep dive.
+<img width="1872" height="447" alt="image" src="https://github.com/user-attachments/assets/10e8feac-9bc8-4aa7-bf98-10f84d7b09e6" />
+
 
 ### **Security-first Architecture**
 - No unsecure external APIs required
