@@ -16,7 +16,7 @@ The success metrics used to evaluate completeness of this MVP:
 
 ## 2. Core Requirements & Success Metrics
 
-### Behavioral Change  
+### 2.1 Behavioral Change  
 Finn, the AI assistant, provides:
 - Specific, numeric suggestions  
 - Rolling three month trend-based insights 
@@ -25,7 +25,7 @@ Finn, the AI assistant, provides:
 - Encouraging, non-judgmental language  
 - Actionable insights 
 
-### Financial Visibility  
+### 2.2 Financial Visibility  
 In addition to the capabilities of the AI Coach, data visualization is also an important aspect of understanding finances. This dashboard showcases the following metrics for a clean, all-around picture:
 - Income, expenses, net savings  
 - Category-level spending  
@@ -33,7 +33,7 @@ In addition to the capabilities of the AI Coach, data visualization is also an i
 - Budget utilization  
 - AI insights by month
 
-### Security & Trust  
+### 2.3 Security & Trust  
 When handling financial data, it must be stored according to regulations and should convey a strong trust sentiment to end users. This MVP version exemplifies this ideology by implementing the following:
 - Local, on-device LLM inference
 - Prisma layer for DB integrity  
@@ -44,7 +44,7 @@ When handling financial data, it must be stored according to regulations and sho
   - Encrypting database at rest
   - Utilize secure 3rd-party financial APIs only (i.e. Plaid)
 
-### AI Application  
+### 2.4 AI Application  
 Implemented using:
 - On-device LLM via Ollama
 - A structured system prompt enforcing numeric grounding  (see src/server/ai/getFinanceInsights.tsx)
