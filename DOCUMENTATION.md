@@ -193,12 +193,12 @@ If adopted professionally:
 - On-device model fine-tuning
 
 ## 10. Conclusion
-FinGuardian demonstrates how a modern AI-powered finance app can:
+FinGuardian demonstrates how a modern on-device AI-powered finance app can:
 - Provide clarity into the complete picture
 - Encourage and reinforce positive financial habits 
 - Build trust with end users by promising responsible data handling
 - Operate securely and provide world-class threat mitigation
 - Scale into a massive production-ready platform when ready
 
-Implementing deterministic calculation functions alongside allowing AI to perform reasoning on raw data creates a feature-complete financial data visualization application, allowing models to do heavy lifting with inference while providing empirical data calculated to yield more reliable insights. 
+Implementing deterministic calculation functions while allowing AI to perform reasoning on raw data creates a feature-complete financial data visualization application.  This allows models to do heavy lifting with inference, while providing empirical data calculated to yield more reliable insights.
 

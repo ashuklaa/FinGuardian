@@ -32,7 +32,7 @@ function CoachInsightsSkeleton() {
 
 function ChatHistory({ messages }: { messages: ConversationTurn[] }) {
 	return (
-		<div className="mt-4 space-y-3 max-h-80 overflow-y-auto pr-1">
+		<div className="mt-4 space-y-3 max-h-105 overflow-y-auto pr-1">
 			{messages.length === 0 ? (
 				<p className="text-xs text-muted-foreground">
 					Ask a question to start a conversation with your coach about this month’s spending.
