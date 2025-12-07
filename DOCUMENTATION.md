@@ -134,49 +134,49 @@ The client UI uses:
 - markdown rendering with ReactMarkdown
 - Chat bubble conversational UI for Finn Chat
 
-### 6. Security Considerations
-## Prototype Security
+## 6. Security Considerations
+### Prototype Security
 - All inference is local
 - No network calls
 - SQLite DB only stores synthetic data
 - Server-only functions for sensitive logic
 
-## Production Security Plan
+### Production Security Plan
 If adopted professionally:
 - JWT for all api conversions of server-side domain functions
 - Replace SQLite with Postgres encrypted-at-rest
 - Use Plaid for real transaction ingestion
 - Apply robust input sanitization and train model to favor system prompt over user section for prompt injection prevention 
 
-Model deployment:
+### Model deployment:
 - Enterprise GPU cluster, or on-device inference
 - Utilize HTTPS-only transport
 - Implement RBAC / OAuth / session tokens
 
-### 7. UI/UX Design
-## Goals
+## 7. UI/UX Design
+### Goals
 - Zero cognitive friction
 - Fast scanning
 - Emotionally supportive financial coaching
 - Dark/light mode
 - Easy readability
-## Components
+### Components
 - shadcn/ui
 - Cyber-orange color palette/corporate branding
 - Chat interface with DM-style chat bubbles.
 
-### 8. Engineering Quality Practices
+## 8. Engineering Quality Practices
 - Modular directory structure
 - Server-only finance computation modules
 - Modularized frontend components assembled in pages
 - Maximal type-safety wherever possible, especially around AI communications and DB communications
 - Smooth error boundaries
 - Client components only where necessary (AI Insights, so that rest of page may server-load while waiting)
-- Avoided global client state (local state per-component)
+- Purposeful avoidance of global client state (local state per-component)
 - Prisma schema normalized & validated
 
-### 9. Future Enhancements
-## Short-Term
+## 9. Future Enhancements
+### Short-Term
 - User authentication with middleware
 - Migration to Postgres encrypted-at-rest instance
 - Statistical forecasting
@@ -184,13 +184,13 @@ Model deployment:
 - Multi-currency support
 - Adding colorblind-mode, other accessibility settings(WCAG, Aria/Screenreader compatibility) for better UI design
 
-## Long-Term
+### Long-Term
 - Plaid Integration for real transaction data
 - End-to-end encryption for all network traffic between APIs and UI
 - Mobile app for frictionless access
 - On-device model finetuning
 
-### 10. Conclusion
+## 10. Conclusion
 FinGuardian demonstrates how a modern AI-powered finance app can:
 - Provide clarity into the complete picture
 - Encourage and reinforce positive financial habits to continue carrying momentum
