@@ -48,6 +48,22 @@ function buildPrompt(input: InsightInput) {
 		? `\nUSER QUESTION\n${userMessage.trim()}`
 		: "";
 
+	const coachingInstructions = userQuestionBlock == "" ? `
+- Use the **raw transactions over the last 3 months** to identify trends:
+  - Are certain categories (e.g. Dining, Coffee, Shopping, Travel) increasing or decreasing?
+  - Are there occasional spikes (e.g. one-time Travel or Shopping bursts)?
+  - Are there stable, fixed expenses (e.g. Rent, Utilities)?
+  - Are there recurring expenses like subscriptions (excluding rent and utilities)?
+- Start with 1–2 sentences summarizing the overall trend over these 3 months in plain English.
+`: `
+- Use the **raw transaction data** provided in conjunction with the user's question to anwer their request:
+  - If they ask about categories over a certain time period, how are they doing in their spending across that category?
+  - If they ask about why a certain spike occured this month vs last month, analyze the provided transaction data and reply with empirical reasoning only
+  - If they ask about subscriptions, use a 2 months of transactions minimum to identify those
+  - If they ask about free trials or grey charges, find merchants that were added that month but were not present the month before in the subscriptions category. 
+  - If they ask you to analyze something and tell them if they need to change anything, assume that they are looking for advice at the transaction-specific level (i.e. you spent $X on travel this month, maybe try to reduce trips to coffee shops next month or cancel your subscriptions to these merchants if this travel expense will be consistent)
+`;
+
 	const outputFormat = userQuestionBlock == "" ? `
 Intro paragraph (1–2 sentences on 3-month trends, except for when answering a user question).
 
@@ -62,9 +78,9 @@ Intro paragraph specifically acknowledging user request (2 sentences or less).
 **Relevant Data**
 - **Itemized list of transactions, trends, and other data points related to question containing real dollar values for each item, followed by a summation at the bottom. Analyze any question-related trends as well.**.
 
-**2-4 word bolded sub-heading** followed by 1-2 sentences of actionable tasks the user could take related to question.
+**2-4 word bolded sub-heading** followed by 1-2 sentences of actionable tasks the user could take related to question, and the **exact**, numerically grounded financial impact that task would have.
 
-Closing paragraph (1-2 sentences, containing empirically sourced encouragement grounded in provided and analyzed data, i.e. "Taking these actions could save as much as $X next month!", followed by emotional encouragement) 
+Closing paragraph (1-2 sentences, MUST CONTAIN the dollar value financial impactm and empirically sourced encouragement grounded in provided and analyzed data, i.e. "Taking these actions could save as much as $X next month!", followed by emotional encouragement) 
 `;
 
 	return `
@@ -87,7 +103,7 @@ ${topMerchants
 			.map((m) => `- ${m.merchant}: $${m.spent.toFixed(2)} this month`)
 			.join("\n") || "- (no merchants provided)"}
 
-BUDGETS OF CONCERN (status != "ok")
+BUDGETS (focus on status != "ok")
 ${budgets.length === 0
 			? "- None. All tracked budgets are OK."
 			: budgets
@@ -108,14 +124,9 @@ Positive = income or inflow, negative = spending.
 ${recentTxLines || "(no transactions provided)"}
 
 COACHING INSTRUCTIONS
-- Use the **raw transactions over the last 3 months** to identify trends:
-  - Are certain categories (e.g. Dining, Coffee, Shopping, Travel) increasing or decreasing?
-  - Are there occasional spikes (e.g. one-time Travel or Shopping bursts)?
-  - Are there stable, fixed expenses (e.g. Rent, Utilities)?
-  - Are there recurring expenses like subscriptions (excluding rent and utilities)?
-- Start with 1–2 sentences summarizing the overall trend over these 3 months in plain English.
+${coachingInstructions}
 - Then give **exactly 3 bullet points** of practical advice.
-- Each bullet must reference **at least one numeric value** from the data (e.g. "You spent $X.XX on Y in the last 3 months" or "This month you spent $X.XX vs about $Y.YY previously").
+- Each bullet must reference **at least one numeric value** from the data (e.g. "You spent $X.XX on Y in the last X months" or "This month you spent $X.XX vs about $Y.YY previously").
 - Focus on specific, low-effort changes (e.g. 1 fewer delivery order, brewing coffee at home twice a week).
 - Never shame or scold. Keep tone supportive and realistic.
 
