@@ -50,7 +50,7 @@ Implemented using:
 - A structured system prompt enforcing numeric grounding  (see src/server/ai/getFinanceInsights.tsx)
 - Trend extraction using deterministic preprocessing for certain datapoints to allow for simultaneous visualization
 - Per-month contextual analysis
-- User conversational memory fed into each LLM request for better context and personalization.
+- User conversational memory fed into each LLM request for better context and personalization
 
 ---
 
@@ -108,8 +108,8 @@ Before calling the model, the app computes:
 
 The system prompt enforces:
 - 11th-grade lexile (found to be most commonly understandable by AI users) 
-- No hallucination by requiring the use of empirical data in each line of the response. 
-- Statistical grounding, only allowing calculations on provided numbers.
+- No hallucination by requiring the use of empirical data in each line of the response
+- Statistical grounding, only allowing calculations on provided numbers
 - Avoiding unrealistic suggestions 
 - No scolding language 
 - Markdown formatting  
@@ -131,39 +131,39 @@ The request:
 The client UI uses:
 - NextJS-style "suspense" boundaries with client component injection
 - Skeleton loaders
-- markdown rendering with ReactMarkdown
+- Markdown rendering with ReactMarkdown
 - Chat bubble conversational UI for Finn Chat
 
 ## 6. Security Considerations
-### Prototype Security
+### 6.1 Prototype Security
 - All inference is local
 - No network calls
 - SQLite DB only stores synthetic data
 - Server-only functions for sensitive logic
 
-### Production Security Plan
+### 6.2 Production Security Plan
 If adopted professionally:
 - JWT for all api conversions of server-side domain functions
 - Replace SQLite with Postgres encrypted-at-rest
 - Use Plaid for real transaction ingestion
 - Apply robust input sanitization and train model to favor system prompt over user section for prompt injection prevention 
 
-### Model deployment:
+### 6.3 Model deployment:
 - Enterprise GPU cluster, or on-device inference
 - Utilize HTTPS-only transport
 - Implement RBAC / OAuth / session tokens
 
 ## 7. UI/UX Design
-### Goals
+### 7.1 Goals
 - Zero cognitive friction
 - Fast scanning
 - Emotionally supportive financial coaching
 - Dark/light mode
 - Easy readability
-### Components
+### 7.2 Components
 - shadcn/ui
 - Cyber-orange color palette/corporate branding
-- Chat interface with DM-style chat bubbles.
+- Chat interface with DM-style chat bubbles
 
 ## 8. Engineering Quality Practices
 - Modular directory structure
@@ -176,15 +176,15 @@ If adopted professionally:
 - Prisma schema normalized & validated
 
 ## 9. Future Enhancements
-### Short-Term
+### 9.1 Short-Term
 - User authentication with middleware
 - Migration to Postgres encrypted-at-rest instance
 - Statistical forecasting
 - Category auto-classification model
 - Multi-currency support
-- Adding colorblind-mode, other accessibility settings(WCAG, Aria/Screenreader compatibility) for better UI design
+- Adding colorblind mode, other accessibility settings(WCAG, Aria/Screenreader compatibility) for better incusive UI design
 
-### Long-Term
+### 9.2 Long-Term
 - Plaid Integration for real transaction data
 - End-to-end encryption for all network traffic between APIs and UI
 - Mobile app for frictionless access
@@ -193,7 +193,7 @@ If adopted professionally:
 ## 10. Conclusion
 FinGuardian demonstrates how a modern AI-powered finance app can:
 - Provide clarity into the complete picture
-- Encourage and reinforce positive financial habits to continue carrying momentum
+- Encourage and reinforce positive financial habits 
 - Build trust with end users by promising responsible data handling
 - Operate securely and provide world-class threat mitigation
 - Scale into a massive production-ready platform when ready
