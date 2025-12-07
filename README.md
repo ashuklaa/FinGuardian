@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FinGuardian — AI-Powered Personal Finance Coach
+
+FinGuardian is a next-generation financial visibility and coaching tool built with **Next.js 15**, **TypeScript**, **Prisma**, **SQLite**, and **on-device LLM inference** (via Ollama).  
+It transforms raw transaction history into immediate clarity, actionable insights, and personalized coaching.
+
+This project was developed as part of a 48-hour prototype challenge and demonstrates:
+- High-quality engineering practices  
+- Secure architecture  
+- ML-backed financial reasoning  
+- UX tailored toward clarity and behavior change  
+
+---
+
+## ✨ Features
+
+### **Financial Dashboard**
+- Month-by-month spending visualization  
+- Income, expenses, net savings  
+- Category-level spending  
+- 12 months of synthetic realistic financial data  
+- Three-month trend extraction
+
+### **AI Financial Coach**
+Powered locally using **Gemma2:9b** or **Qwen 32B** via Ollama:
+
+- Generates human-quality financial insights  
+- Avoids hallucination via numeric grounding  
+- Detects anomalies like:
+  - spending spikes  
+  - travel bursts  
+  - holiday overspending  
+  - subscription creep  
+  - forgotten trials  
+- Provides 11th-grade reading-level suggestions  
+- Allows **two-way chat** with stateful memory
+
+### **Budget Sentry**
+- Configurable category budgets  
+- Near-limit and over-limit detection  
+- Color-coded UX and progress bars  
+- Designed for quick scan behavior
+
+### **Security-first Architecture**
+- No external APIs required for prototype  
+- All inference runs on-device  
+- No financial data leaves your machine  
+- Clear path defined for production hardening (Plaid + encrypted DB)
+
+---
+
+## Tech Stack
+
+- **Next.js 15 (App Router)**
+- **TypeScript**
+- **Prisma ORM**
+- **SQLite (local dev)**
+- **Tailwind + shadcn/ui**
+- **Ollama (running Gemma2:9b)**
+- **React Server Components**
+- **Suspense-based asynchronous LLM UI**
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+
+```
+### 2. Initialize and Seed Prisma DB 
+```bash
+npx prisma generate
+npx prisma migrate dev
+npm run seed
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Download and start Ollama model
+```bash
+ollama pull gemma2:9b
+ollama pull 
+ollama serve
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Configure model for higher-spec machines (Tested on M3 Pro Apple Silicon w/ 38GB Unified Memory)
+```bash
+ollama create gemma2-9b-8k -f models/gemma2-9b-8k.Modelfile 
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 5. Start node server
+```bash
+npm run dev
+```
 
-## Learn More
+### 6. Open app
 
-To learn more about Next.js, take a look at the following resources:
+navigate to **http://localhost:3000**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
